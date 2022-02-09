@@ -15,8 +15,7 @@ const startProgress = () => {
 
 const stopProgress = () => {
     document.documentElement.classList.remove('cursor-loading');
-    var element = document.getElementById("loader");
-    element.classList.remove("loader");
+    document.documentElement.classList.remove('loader')
 };
 
 // average over an array

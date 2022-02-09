@@ -64,13 +64,3 @@ a {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
-#loader divElement{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-}

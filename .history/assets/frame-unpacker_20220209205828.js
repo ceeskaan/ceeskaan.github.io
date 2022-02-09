@@ -9,6 +9,7 @@ const FrameUnpacker = (() => {
         const calls = [];
 
         const timeStart = performance.now();
+            log('Loading...');
         // download each frame image and prep it up
         for (let index = start; index <= end; index++) {
             const id = index.toString().padStart(padding, '0');

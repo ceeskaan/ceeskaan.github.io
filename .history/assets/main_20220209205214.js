@@ -12,7 +12,7 @@
     const framesUrlEnd = parseInt(framesUrlElement.dataset.frameEnd, 10);
     const framesIdPadding = parseInt(framesUrlElement.dataset.frameIdPadding, 10);
 
-    
+    log('Loading...');
 
     const startTime = Date.now();
 

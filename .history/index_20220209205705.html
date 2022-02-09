@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crispy AI</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="common/main.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <link rel = "icon" href = 
+        "icon.png" 
+        type = "image/x-icon">
+    </head>
+    <body>
+        <h2>
+                <code>video-server-frames</code>
+            </h2>
+            <section>
+                <pre id="comments"></pre>
+            </section>
+        <div id="content">
+            <section class="canvas-container" id="canvas-container">
+                <input
+                    name="frames-url"
+                    type="hidden"
+                    value="videos/frames/image{{id}}.jpg"
+                    data-frame-start="596"
+                    data-frame-end="719"
+                    data-frame-id-padding="3"
+                />
+            </section>
+        </div>
+        <script>
+        $(document).mousemove(function(e) {
+            var percent = e.clientX / $(window).width();
+           $('body, html').scrollTop($(document).height() * percent/1.283);
+        });</script>
+        <script src="common/utils.js"></script>
+        <script src="common/scroll-observable.js"></script>
+        <script src="common/canvas-frame-scrubber.js"></script>
+        <script src="assets/frame-unpacker.js"></script>
+        <script src="assets/main.js"></script>
+    </body>
+</html>

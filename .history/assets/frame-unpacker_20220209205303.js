@@ -9,6 +9,7 @@ const FrameUnpacker = (() => {
         const calls = [];
 
         const timeStart = performance.now();
+
         // download each frame image and prep it up
         for (let index = start; index <= end; index++) {
             const id = index.toString().padStart(padding, '0');
@@ -24,7 +25,7 @@ const FrameUnpacker = (() => {
                 )
             );
         }
-        log('Loading...');
+
         // wait for all the downloads to finish... (a more eager implementation that starts putting
         // the scrubbing as soon as the first few frames are downloaded can also be done, but we'll
         // keep thing s simple for now)
@@ -40,7 +41,7 @@ const FrameUnpacker = (() => {
         bitmaps.map(bitmap => frames.push(bitmap.bitmap));
 
         const timeDelta = performance.now() - timeStart;
-        console.log = function() {}
+
         return frames;
     };
 

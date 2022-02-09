@@ -12,7 +12,9 @@
     const framesUrlEnd = parseInt(framesUrlElement.dataset.frameEnd, 10);
     const framesIdPadding = parseInt(framesUrlElement.dataset.frameIdPadding, 10);
 
-    
+    log(`Initializing frames download...`);
+
+    log(`Please be patient. Downloaing ${framesUrlEnd} frames...`);
 
     const startTime = Date.now();
 
@@ -25,7 +27,9 @@
 
     const endTime = Date.now();
 
+    log(`Took ${(endTime - startTime) / 1000} seconds.`);
 
+    log('Painting canvas with first frame...');
 
     const canvas = document.createElement('canvas');
     canvas.classList.add('canvas');
@@ -36,13 +40,14 @@
 
     videoContainer.appendChild(canvas);
 
-
+    log('Setting up scrubber...');
 
     const observer = CanvasFrameScrubber.create(context, frames);
 
     const observable = new ScrollObservable();
     observable.subscribe(observer);
 
+    log('Ready! Scroll to scrub.');
 
     stopProgress();
 })();
